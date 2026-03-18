@@ -8,7 +8,6 @@ typedef struct {
     float area;
 } Rectangle;
 
-// Function prototypes
 Rectangle input();
 float calculate_area(Rectangle rect);
 void compare_areas(Rectangle r1, Rectangle r2, Rectangle r3);
@@ -18,7 +17,6 @@ int main() {
     
     printf("Enter details for three rectangles:\n");
     
-    // Input rectangles
     rect1 = input();
     rect1.area = calculate_area(rect1);
     
@@ -28,7 +26,6 @@ int main() {
     rect3 = input();
     rect3.area = calculate_area(rect3);
     
-    // Compare areas
     compare_areas(rect1, rect2, rect3);
     
     return 0;
@@ -38,13 +35,13 @@ Rectangle input() {
     Rectangle r;
     printf("Enter name: ");
     fgets(r.name, 50, stdin);
-    r.name[strcspn(r.name, "\n")] = 0;  // Remove newline
+    r.name[strcspn(r.name, "\n")] = 0;
     
     printf("Enter length: ");
     scanf("%f", &r.length);
     printf("Enter width: ");
     scanf("%f", &r.width);
-    while (getchar() != '\n');  // Clear input buffer
+    while (getchar() != '\n'); 
     
     return r;
 }
