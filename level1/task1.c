@@ -4,12 +4,11 @@
 
 int main()
 {
-    char *name;           // pointer to dynamically allocated memory
-    int size = 50;        // assume max 49 characters per name
+    char *name;           
+    int size = 50;        
 
     while (1)
     {
-        // dynamically allocate memory for one name
         name = (char*) malloc(size * sizeof(char));
         if (name == NULL)
         {
@@ -22,13 +21,13 @@ int main()
 
         if (strcmp(name, "exit") == 0)
         {
-            free(name);   // free memory before exiting loop
+            free(name);   
             break;
         }
 
         printf("Student entered: %s\n", name);
 
-        free(name);       // free memory after each name
+        free(name);       
     }
 
     printf("Exited.\n");
